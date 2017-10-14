@@ -4,10 +4,27 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Juego del negro del watzap</title>
+    <script type="text/javascript">
+        function ajax1() {
+            PageMethods.funcion(onSuccess, onError);
+
+            function onSuccess(result) {
+                document.getElementById("miDiv").innerHTML = result;
+            }
+
+            function onError(result) {
+                alert('Cannot process your request at the moment, please try later.');
+            }
+        }
+</script>
 </head>
 <body>
     <form id="form1" runat="server">
+        <div id="miDiv"></div>
+        <a href="javascript:ajax1();">link</a>
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+        </asp:ScriptManager>
         <asp:Label ID="lblPrueba" runat="server" Text=""/>
     <div>
         <table>
